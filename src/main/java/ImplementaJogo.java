@@ -24,9 +24,6 @@ public class ImplementaJogo {
     }
 
     public void imprimejogo(){
-        imprimejogo2(Tabuleiro);
-    }
-    private void imprimejogo2(int[][] Tabuleiro){
         for (int[] ints : Tabuleiro) {
             for (int col = 0; col < Tabuleiro[0].length; col++) {
                 System.out.print(ints[col] + " ");
