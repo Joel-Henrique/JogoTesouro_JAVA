@@ -26,13 +26,32 @@ public class ImplementaJogo {
         for (; jogador1.getexp() < this.qntdt ;){
             Scanner teclado = new Scanner(System.in);
             char anda;
-            System.out.print("Digite uma letra para andar: ");
-            anda = teclado.next().charAt(0);
-            System.out.println(anda);
-            andar(anda,Tabuleiro);
-            System.out.println();
-            //imprimejogo(Tabuleiro);
+            System.out.println("Digite: ");
+            System.out.println("1 - Para movimentar o Jogador");
+            System.out.println("2 - Para sair ");
+            System.out.print("Informe a opção: ");
+            int verifica = teclado.nextInt();
+            switch (verifica) {
+                case 1 -> {
+                    System.out.println("Digite:");
+                    System.out.println(" w - para mover o jogador para cima");
+                    System.out.println(" s - para mover o jogador para baixo");
+                    System.out.println(" a - para mover o jogador para esquerda");
+                    System.out.println(" d - para mover o jogador para direita");
+                    System.out.print("Informe a direção: ");
+                    anda = teclado.next().charAt(0);
+                    System.out.println(anda);
+                    andar(anda, Tabuleiro);
+                    System.out.println();
+                    imprimejogo(Tabuleiro);
+                }
+                //imprimejogo(Tabuleiro);
+                case 2 -> this.qntdt = -1;
+                default -> System.out.println("Digite um numero valido!");
+            }
         }
+        if(qntdt>0)
+            System.out.println("Parabens Você Ganhou UHULLLL");
     }
 
     private void GeraTesouro(int[][] Tabuleiro){
